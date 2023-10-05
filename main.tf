@@ -1,5 +1,5 @@
-resource "aws_scheduler_schedule" "cron" {
-  for_each   = local.schedulers
+resource "aws_scheduler_schedule" "cron_staking" {
+  for_each   = local.schedulers_staking
   name       = "${local.environment_stage}_${each.key}"
   group_name = "default"
 
