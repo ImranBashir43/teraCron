@@ -16,7 +16,7 @@ locals {
           path   = "/api/v1/crons/reStakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -27,7 +27,7 @@ locals {
           path   = "/api/v1/crons/reUnstakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -38,7 +38,7 @@ locals {
           path   = "/api/v1/crons/reStake"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -49,7 +49,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpStakesAsCompleted"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -60,7 +60,7 @@ locals {
           path   = "/api/v1/crons/calculateDailyReward"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -71,7 +71,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpToInRedemption"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -82,7 +82,7 @@ locals {
           path   = "/api/v1/crons/updateUnstakeInRedemptionToReedemed"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -93,7 +93,7 @@ locals {
           path   = "/api/v1/crons/withdrawalDeactivatedStakes"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -104,7 +104,7 @@ locals {
           path   = "/api/v1/crons/updateTransactionFee"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -118,7 +118,7 @@ locals {
           path   = "/api/v1/crons/reStakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -129,7 +129,7 @@ locals {
           path   = "/api/v1/crons/reUnstakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -140,7 +140,7 @@ locals {
           path   = "/api/v1/crons/reStake"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -151,7 +151,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpStakesAsCompleted"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -162,7 +162,7 @@ locals {
           path   = "/api/v1/crons/calculateDailyReward"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -173,7 +173,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpToInRedemption"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -184,7 +184,7 @@ locals {
           path   = "/api/v1/crons/updateUnstakeInRedemptionToReedemed"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -195,7 +195,7 @@ locals {
           path   = "/api/v1/crons/withdrawalDeactivatedStakes"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -206,7 +206,7 @@ locals {
           path   = "/api/v1/crons/updateTransactionFee"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -220,7 +220,7 @@ locals {
           path   = "/api/v1/crons/reStakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -231,7 +231,7 @@ locals {
           path   = "/api/v1/crons/reUnstakeForBrokenQueue"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -242,7 +242,7 @@ locals {
           path   = "/api/v1/crons/reStake"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -253,7 +253,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpStakesAsCompleted"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -264,7 +264,7 @@ locals {
           path   = "/api/v1/crons/calculateDailyReward"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -275,7 +275,7 @@ locals {
           path   = "/api/v1/crons/updateLockedUpToInRedemption"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -286,7 +286,7 @@ locals {
           path   = "/api/v1/crons/updateUnstakeInRedemptionToReedemed"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -297,7 +297,7 @@ locals {
           path   = "/api/v1/crons/withdrawalDeactivatedStakes"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
@@ -308,7 +308,7 @@ locals {
           path   = "/api/v1/crons/updateTransactionFee"
           method = "POST"
           header = {
-            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_URL_KEY"]
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
           }
         }
       }
