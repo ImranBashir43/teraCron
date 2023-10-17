@@ -42,6 +42,17 @@ locals {
           }
         }
       }
+      identifyStakes = {
+        cron_expressions = "rate(1 hour)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_staking_worker.value
+          path   = "/api/v1/crons/identifyStakes"
+          method = "POST"
+          header = {
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
+          }
+        }
+      }
       updateLockedUpStakesAsCompleted = {
         cron_expressions = "rate(1 hour)"
         payload = {
@@ -144,6 +155,17 @@ locals {
           }
         }
       }
+      identifyStakes = {
+        cron_expressions = "rate(1 hour)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_staking_worker.value
+          path   = "/api/v1/crons/identifyStakes"
+          method = "POST"
+          header = {
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
+          }
+        }
+      }
       updateLockedUpStakesAsCompleted = {
         cron_expressions = "rate(1 hour)"
         payload = {
@@ -240,6 +262,17 @@ locals {
         payload = {
           url    = data.aws_ssm_parameter.ssm_staking_worker.value
           path   = "/api/v1/crons/reStake"
+          method = "POST"
+          header = {
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
+          }
+        }
+      }
+      identifyStakes = {
+        cron_expressions = "rate(1 hour)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_staking_worker.value
+          path   = "/api/v1/crons/identifyStakes"
           method = "POST"
           header = {
             token = jsondecode(data.aws_secretsmanager_secret_version.sm_staking_worker.secret_string)["REPOSITORY_KEY"]
