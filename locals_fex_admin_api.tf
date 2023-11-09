@@ -51,7 +51,7 @@ locals {
       }
       
       ExpireCardDeposits = {
-        cron_expressions = "cron(0/60 * * * ? *)"
+        cron_expressions = "cron(0 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/expireCardDeposits/gBGVGvMJWDjPnf9rkYtUP3nVFnCDKYef"
@@ -118,7 +118,7 @@ locals {
       }
       
       ExpireCardDeposits = {
-        cron_expressions = "cron(0/60 * * * ? *)"
+        cron_expressions = "cron(0 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/expireCardDeposits/gBGVGvMJWDjPnf9rkYtUP3nVFnCDKYef"
@@ -185,7 +185,7 @@ locals {
       }
       
       ExpireCardDeposits = {
-        cron_expressions = "cron(0/60 * * * ? *)"
+        cron_expressions = "cron(0 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/expireCardDeposits/gBGVGvMJWDjPnf9rkYtUP3nVFnCDKYef"
