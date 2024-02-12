@@ -10,7 +10,11 @@ phases:
   build:
     commands:
       - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g prod.conf"  }' | bash -
+      - echo prod-terraform-me-central-1 | awk '{ print "sed -i 's,prod-terraform,'"$0",g prod.conf"  }' | bash -
       - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g providers.tf"  }' | bash -
+      - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g main.tf"  }' | bash -
+      - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g main_fex_admin_api.tf"  }' | bash -
+      - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g terraform.tfvars"  }' | bash -
       - terraform init --backend-config=prod.conf -reconfigure
       - terraform workspace select prod
       - terraform apply -parallelism=1 -auto-approve
