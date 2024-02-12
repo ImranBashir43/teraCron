@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - wget https://releases.hashicorp.com/terraform/1.5.6/terraform_1.5.6_linux_386.zip
+      - unzip terraform_1.5.6_linux_386.zip -d /usr/bin
+      - chmod +x /usr/bin/terraform
+  build:
+    commands:
+      - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g prod.conf"  }' | bash -
+      - echo me-central-1 | awk '{ print "sed -i 's,ap-southeast-3,'"$0",g providers.tf"  }' | bash -
+      - terraform init --backend-config=prod.conf -reconfigure
+      - terraform workspace select prod
+      - terraform apply -parallelism=1 -auto-approve
