@@ -5,7 +5,7 @@ phases:
       python: 3.9
     commands:
       - wget https://releases.hashicorp.com/terraform/1.7.3/terraform_1.7.3_linux_amd64.zip
-      - unzip terraform_1.7.3_linux_amd64.zip -d /usr/binn
+      - unzip terraform_1.7.3_linux_amd64.zip -d /usr/bin
       - chmod +x /usr/bin/terraform
   build:
     commands:
