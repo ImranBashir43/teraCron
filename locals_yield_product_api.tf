@@ -62,7 +62,7 @@ locals {
 
     prod = {
       runAutoRenewalsAndProfitDisbursements = {
-        cron_expressions = "cron(10 0 * * ? *)"
+        cron_expressions = "cron(0 0 * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_yield_product_api.value
           path   = "/api/v1/yield/runAutoRenewalsAndProfitDisbursements"
