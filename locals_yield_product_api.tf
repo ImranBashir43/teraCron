@@ -21,6 +21,19 @@ locals {
         }
       }
 
+
+      runAutoRenewalsAndProfitDisbursementsForTestUsers = {
+        cron_expressions = "rate(10 minutes)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_yield_product_api.value
+          path   = "/api/v1/yield/runAutoRenewalsAndProfitDisbursements"
+          method = "POST"
+          header = {
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_yield_product_api.secret_string)["AWS_SCHEDULAR_SECRETS"]
+          }
+        }
+      }
+
       runFailedAutoRenewalsAndProfitDisbursements = {
         cron_expressions = "cron(10 0 * * ? *)"
         payload = {
