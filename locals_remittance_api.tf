@@ -10,8 +10,8 @@ locals {
   dynamic_schedulers_remittance_api = {
 
     dev = {
-      updateTransactionStatusCron = {
-        cron_expressions = "cron(0 * * * *)"
+      updateTransactionsStatusCron = {
+        cron_expressions = "cron(*/30 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_remittance_api.value
           path   = "/api/v1/remittance/updateTransactionsStatusCron"
@@ -24,8 +24,8 @@ locals {
     }
 
     # stg = {
-    #   updateTransactionStatusCron = {
-    #     cron_expressions = "cron(0 * * * *)"
+    #   updateTransactionsStatusCron = {
+    #     cron_expressions = "cron(*/30 * * * ? *)"
     #     payload = {
     #       url    = data.aws_ssm_parameter.ssm_remittance_api.value
     #       path   = "/api/v1/remittance/updateTransactionsStatusCron"
@@ -38,8 +38,8 @@ locals {
     # }
 
     # prod = {
-    #   updateTransactionStatusCron = {
-    #     cron_expressions = "cron(0 * * * *)"
+    #   updateTransactionsStatusCron = {
+    #     cron_expressions = "cron(*/30 * * * ? *)"
     #     payload = {
     #       url    = data.aws_ssm_parameter.ssm_remittance_api.value
     #       path   = "/api/v1/remittance/updateTransactionsStatusCron"
