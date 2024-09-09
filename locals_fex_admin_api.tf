@@ -63,15 +63,6 @@ locals {
         }
       }
       
-      CoinAvailabilityCheck = {
-        cron_expressions = "cron(0/5 * * * ? *)"
-        payload = {
-          url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
-          path   = "/api/v1/admin/dashboard/coinAvailabilityCheck?secret=${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["DEPOSIT_EXPIRY_SECRET"]}"
-          method = "GET"
-        }
-      }
-      
       ExpireCardDeposits = {
         cron_expressions = "cron(0 * * * ? *)"
         payload = {
@@ -148,15 +139,6 @@ locals {
         }
       }
       
-      CoinAvailabilityCheck = {
-        cron_expressions = "cron(0/5 * * * ? *)"
-        payload = {
-          url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
-          path   = "/api/v1/admin/dashboard/coinAvailabilityCheck?secret=${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["DEPOSIT_EXPIRY_SECRET"]}"
-          method = "GET"
-        }
-      }
-      
       ExpireCardDeposits = {
         cron_expressions = "cron(0 * * * ? *)"
         payload = {
@@ -229,15 +211,6 @@ locals {
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/tradeAnalysisPerDay?secret=${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["TRADEANALYSIS_SECRET"]}"
-          method = "GET"
-        }
-      }
-      
-      CoinAvailabilityCheck = {
-        cron_expressions = "cron(0/5 * * * ? *)"
-        payload = {
-          url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
-          path   = "/api/v1/admin/dashboard/coinAvailabilityCheck?secret=${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["DEPOSIT_EXPIRY_SECRET"]}"
           method = "GET"
         }
       }
