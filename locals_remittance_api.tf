@@ -11,10 +11,10 @@ locals {
 
     dev = {
       updateTransactionStatusCron = {
-        cron_expressions = "cron(*/15 * * * *)"
+        cron_expressions = "cron(0 * * * *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_remittance_api.value
-          path   = "/api/v1/remittance/updateTransactionStatusCron"
+          path   = "/api/v1/remittance/updateTransactionsStatusCron"
           method = "GET"
           header = {
             x-api-key = jsondecode(data.aws_secretsmanager_secret_version.sm_remittance_api.secret_string)["REMITTANCE_API_KEY"]
@@ -25,10 +25,10 @@ locals {
 
     # stg = {
     #   updateTransactionStatusCron = {
-    #     cron_expressions = "cron(*/10 * * * *)"
+    #     cron_expressions = "cron(0 * * * *)"
     #     payload = {
     #       url    = data.aws_ssm_parameter.ssm_remittance_api.value
-    #       path   = "/api/v1/remittance/updateTransactionStatusCron"
+    #       path   = "/api/v1/remittance/updateTransactionsStatusCron"
     #       method = "GET"
     #       header = {
     #         x-api-key = jsondecode(data.aws_secretsmanager_secret_version.sm_remittance_api.secret_string)["REMITTANCE_API_KEY"]
@@ -39,10 +39,10 @@ locals {
 
     # prod = {
     #   updateTransactionStatusCron = {
-    #     cron_expressions = "cron(*/10 * * * *)"
+    #     cron_expressions = "cron(0 * * * *)"
     #     payload = {
     #       url    = data.aws_ssm_parameter.ssm_remittance_api.value
-    #       path   = "/api/v1/remittance/updateTransactionStatusCron"
+    #       path   = "/api/v1/remittance/updateTransactionsStatusCron"
     #       method = "GET"
     #       header = {
     #         x-api-key = jsondecode(data.aws_secretsmanager_secret_version.sm_remittance_api.secret_string)["REMITTANCE_API_KEY"]
