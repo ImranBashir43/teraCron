@@ -6,6 +6,9 @@ data "aws_secretsmanager_secret_version" "sm_fex_admin_api" {
   secret_id = "${local.environment_stage}-secret-fex-admin-api"
 }
 
+data "aws_ssm_parameter" "ssm_fasset-exchange-cron" {
+  name = "/${local.environment_stage}/general/fasset-exchange-cron/REPOSITORY_URL"
+}
 locals {
   dynamic_schedulers_fex_admin_api = {
     dev = {
@@ -77,6 +80,24 @@ locals {
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/updateCurrenciesRate/${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["DEPOSIT_EXPIRY_SECRET"]}"
+          method = "GET"
+        }
+      }
+
+      cacheBinanceMarketInfo = {
+        cron_expressions = "cron(*/5 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceMarketInfo"
+          method = "GET"
+        }
+      }
+
+      cacheBinanceTickerInfo = {
+        cron_expressions = "cron(0/30 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceTickerInfo"
           method = "GET"
         }
       }
@@ -156,6 +177,24 @@ locals {
           method = "GET"
         }
       }
+
+      cacheBinanceMarketInfo = {
+        cron_expressions = "cron(*/5 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceMarketInfo"
+          method = "GET"
+        }
+      }
+
+      cacheBinanceTickerInfo = {
+        cron_expressions = "cron(0/30 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceTickerInfo"
+          method = "GET"
+        }
+      }
     
     }
 
@@ -229,6 +268,24 @@ locals {
         payload = {
           url    = data.aws_ssm_parameter.ssm_fex_admin_api.value
           path   = "/api/v1/admin/updateCurrenciesRate/${jsondecode(data.aws_secretsmanager_secret_version.sm_fex_admin_api.secret_string)["DEPOSIT_EXPIRY_SECRET"]}"
+          method = "GET"
+        }
+      }
+
+      cacheBinanceMarketInfo = {
+        cron_expressions = "cron(*/5 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceMarketInfo"
+          method = "GET"
+        }
+      }
+
+      cacheBinanceTickerInfo = {
+        cron_expressions = "cron(0/30 * * * ? *)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
+          path   = "/api/v1/cron/cacheBinanceTickerInfo"
           method = "GET"
         }
       }
