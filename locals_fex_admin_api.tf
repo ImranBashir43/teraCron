@@ -94,7 +94,7 @@ locals {
       }
 
       cacheBinanceTickerInfo = {
-        cron_expressions = "cron(0/30 * * * ? *)"
+        cron_expressions = "cron(0/1 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
           path   = "/api/v1/cron/cacheBinanceTickerInfo"
@@ -188,7 +188,7 @@ locals {
       }
 
       cacheBinanceTickerInfo = {
-        cron_expressions = "cron(0/30 * * * ? *)"
+        cron_expressions = "cron(0/1 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
           path   = "/api/v1/cron/cacheBinanceTickerInfo"
@@ -282,7 +282,7 @@ locals {
       }
 
       cacheBinanceTickerInfo = {
-        cron_expressions = "cron(0/30 * * * ? *)"
+        cron_expressions = "cron(0/1 * * * ? *)"
         payload = {
           url    = data.aws_ssm_parameter.ssm_fasset-exchange-cron.value
           path   = "/api/v1/cron/cacheBinanceTickerInfo"
