@@ -20,4 +20,3 @@ resource "aws_scheduler_schedule" "cron_yield" {
     }
   }
 }
-

@@ -20,3 +20,4 @@ resource "aws_scheduler_schedule" "cron_risk_scoring_alerts" {
     }
   }
 }
+
