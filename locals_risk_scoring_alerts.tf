@@ -46,6 +46,18 @@ locals {
           }
         }
       }
+      
+       riskScoringReminderAlertsTest = {
+        cron_expressions = "rate(10 minutes)"
+        payload = {
+          url    = data.aws_ssm_parameter.ssm_cash_app_api.value
+          path   = "/api/v1/users/riskScoringReminderAlerts"  
+          method = "POST"
+          header = {
+            token = jsondecode(data.aws_secretsmanager_secret_version.sm_cash_app_api.secret_string)["AWS_RISK_SCORE_CALC_SECRETS"]
+          }
+        }
+      }
     }
 
     prod = {
